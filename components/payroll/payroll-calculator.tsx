@@ -3,7 +3,6 @@
 import { useMemo, useState } from 'react';
 import {
   Calculator,
-  ChevronDown,
   CircleHelp,
   ExternalLink,
   Landmark,
@@ -230,21 +229,17 @@ export function PayrollCalculator() {
               <Kpi label="Стоимость" value={result.totalCost} icon={Landmark} />
             </div>
 
-            <details className="group mt-5 rounded-2xl border border-white/10 bg-white/5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-sm font-semibold marker:content-none">
-                <span>
-                  Параметры расчёта
-                  <span className="mt-0.5 block text-xs font-normal text-slate-300">
-                    {isResident ? 'Резидент' : 'Нерезидент'} ·{' '}
-                    {bornBefore1975 ? 'до 01.01.1975' : '01.01.1975 и позже'}
-                  </span>
-                </span>
-                <ChevronDown
-                  className="size-4 text-slate-300 transition-transform group-open:rotate-180"
-                  aria-hidden="true"
-                />
-              </summary>
-              <div className="space-y-5 border-t border-white/10 p-4">
+            <section
+              className="mt-5 rounded-2xl border border-white/10 bg-white/5"
+              aria-labelledby="calculation-parameters-heading"
+            >
+              <h3
+                id="calculation-parameters-heading"
+                className="border-b border-white/10 px-4 py-3 text-sm font-semibold"
+              >
+                Параметры расчёта
+              </h3>
+              <div className="space-y-5 p-4">
                 <label className="block" htmlFor="resident-status">
                   <span className="mb-2 block text-sm font-medium text-slate-200">
                     Статус для ИПН
@@ -294,7 +289,7 @@ export function PayrollCalculator() {
                   </label>
                 </div>
               </div>
-            </details>
+            </section>
 
             <div className="mt-5 rounded-2xl border border-teal-300/20 bg-teal-300/10 p-4 text-sm leading-6 text-teal-50 lg:mt-auto">
               <CircleHelp
@@ -426,14 +421,13 @@ export function PayrollCalculator() {
         </section>
 
         <section className="mt-5 grid gap-4 md:grid-cols-2">
-          <details className="group rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-bold marker:content-none">
+          <section
+            className="rounded-2xl bg-white shadow-sm ring-1 ring-slate-200"
+            aria-labelledby="assumptions-heading"
+          >
+            <h2 id="assumptions-heading" className="p-5 font-bold">
               Допущения
-              <ChevronDown
-                className="size-4 text-slate-500 transition-transform group-open:rotate-180"
-                aria-hidden="true"
-              />
-            </summary>
+            </h2>
             <ul className="space-y-2 border-t border-slate-100 px-5 py-4 text-sm leading-6 text-slate-600">
               <li>
                 Гражданин России, стандартный трудовой договор в Казахстане.
@@ -447,16 +441,15 @@ export function PayrollCalculator() {
                 Каждый платёж округляется до целого тенге до расчёта итогов.
               </li>
             </ul>
-          </details>
+          </section>
 
-          <details className="group rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-bold marker:content-none">
+          <section
+            className="rounded-2xl bg-white shadow-sm ring-1 ring-slate-200"
+            aria-labelledby="formulas-heading"
+          >
+            <h2 id="formulas-heading" className="p-5 font-bold">
               Формулы и пределы
-              <ChevronDown
-                className="size-4 text-slate-500 transition-transform group-open:rotate-180"
-                aria-hidden="true"
-              />
-            </summary>
+            </h2>
             <ul className="space-y-2 border-t border-slate-100 px-5 py-4 text-sm leading-6 text-slate-600">
               <li>
                 ИПН: 10% до 8 500 МРП годовой базы, затем 15% с превышения.
@@ -465,7 +458,7 @@ export function PayrollCalculator() {
               <li>ВОСМС: 20 МЗП; ОСМС работодателя: 40 МЗП.</li>
               <li>Социальные отчисления: не более 7 МЗП.</li>
             </ul>
-          </details>
+          </section>
         </section>
 
         <footer className="mt-5 flex flex-col gap-3 rounded-2xl border border-slate-200/80 bg-white/70 px-5 py-4 text-xs leading-5 text-slate-600 sm:flex-row sm:items-center sm:justify-between">
