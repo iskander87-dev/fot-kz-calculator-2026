@@ -199,8 +199,8 @@ export function PayrollCalculator() {
           </span>
         </header>
 
-        <section className="grid items-start gap-5 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
-          <div className="rounded-3xl bg-[#0f2537] p-5 text-white shadow-xl shadow-slate-900/10 sm:p-7">
+        <section className="grid items-stretch gap-5 lg:grid-cols-2">
+          <div className="flex h-full flex-col rounded-3xl bg-[#0f2537] p-5 text-white shadow-xl shadow-slate-900/10 sm:p-7">
             <p className="text-sm font-medium text-teal-200">
               Гражданин России · трудовой договор в РК
             </p>
@@ -296,7 +296,7 @@ export function PayrollCalculator() {
               </div>
             </details>
 
-            <div className="mt-5 rounded-2xl border border-teal-300/20 bg-teal-300/10 p-4 text-sm leading-6 text-teal-50">
+            <div className="mt-5 rounded-2xl border border-teal-300/20 bg-teal-300/10 p-4 text-sm leading-6 text-teal-50 lg:mt-auto">
               <CircleHelp
                 className="mr-2 inline size-4 align-[-2px] text-teal-200"
                 aria-hidden="true"
@@ -306,7 +306,7 @@ export function PayrollCalculator() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+          <div className="h-full overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
             <div className="flex items-start justify-between gap-4 border-b border-slate-200 p-5 sm:p-7">
               <div>
                 <p className="text-sm font-medium text-slate-500">
