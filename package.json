@@ -9,7 +9,8 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
-    "lint": "oxlint",
+    "lint": "oxlint app lib tests components/payroll components/ui/checkbox.tsx",
+    "test": "node --experimental-strip-types --test tests/payroll.test.ts",
     "format": "oxfmt"
   },
   "dependencies": {
